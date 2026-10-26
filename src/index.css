@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #f8f5f0;
+  color: #2c211b;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+
+/* =========================================
+   SPELLBOUND — FEATURED AUTHORS SLIDER
+========================================= */
+
+.spellbound-footer {
+  width: 100%;
+  color: #f8f4ee;
+  background: #191b2b;
+  margin-top: 0;
+}
+
+.authors-section {
+  padding: 56px 6% 48px;
+  background: #f8f5f0;
+  color: #242235;
+  overflow: hidden;
+}
+
+.authors-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.authors-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #9b704d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.authors-heading h2 {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+}
+
+.authors-heading p {
+  margin: 0;
+  color: #777382;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.authors-controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.author-arrow {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d8d0c6;
+  border-radius: 50%;
+  background: transparent;
+  color: #242235;
+  font-size: 21px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.author-arrow:hover {
+  background: #242235;
+  border-color: #242235;
+  color: #fff;
+}
+
+.authors-slider {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 18px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #c7b5a2 transparent;
+}
+
+.authors-slider::-webkit-scrollbar {
+  height: 5px;
+}
+
+.authors-slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.authors-slider::-webkit-scrollbar-thumb {
+  background: #c7b5a2;
+  border-radius: 10px;
+}
+
+.author-slide {
+  flex: 0 0 calc((100% - 88px) / 5);
+  min-width: 0;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.author-cover {
+  height: 220px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #eee6dd;
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgb(35 28 20 / 6%);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.author-slide:hover .author-cover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgb(35 28 20 / 12%);
+}
+
+.author-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.author-slide h3 {
+  margin: 15px 0 5px;
+  color: #242235;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.author-slide p {
+  margin: 0;
+  color: #777382;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   SPELLBOUND — MAIN FOOTER LAYOUT
+========================================= */
+
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(200px, 1.15fr) minmax(0, 2fr) minmax(190px, 0.9fr);
+  gap: 42px;
+  padding: 54px 6% 46px;
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.footer-logo-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #c49a6c;
+  color: #191b2b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+}
+
+.footer-brand-description {
+  margin: 20px 0 14px;
+  color: #c1c0cb;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.footer-brand-note {
+  margin: 0;
+  color: #c49a6c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.footer-link-groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.footer-link-column h3,
+.footer-app-column h3 {
+  margin: 0 0 21px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footer-link-column a {
+  display: block;
+  width: fit-content;
+  margin-bottom: 13px;
+  color: #c1c0cb;
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link-column a:hover {
+  color: #d6b18a;
+}
+
+.footer-app-column > p {
+  margin: -9px 0 18px;
+  color: #c1c0cb;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer-app-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-app-button {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 55px;
+  padding: 9px 12px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.footer-app-button:hover {
+  border-color: #c49a6c;
+  background: rgb(255 255 255 / 5%);
+}
+
+.app-button-icon {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  color: #d6b18a;
+  font-size: 22px;
+}
+
+.footer-app-button small,
+.footer-app-button strong {
+  display: block;
+}
+
+.footer-app-button small {
+  margin-bottom: 3px;
+  color: #c1c0cb;
+  font-size: 8px;
+  letter-spacing: 0.7px;
+}
+
+.footer-app-button strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================================
+   SPELLBOUND — SOCIALS AND COPYRIGHT
+========================================= */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 6%;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.footer-social span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footer-social a {
+  color: #c1c0cb;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: #d6b18a;
+}
+
+.footer-copyright {
+  margin: 0;
+  color: #aaa9b7;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: right;
+}
+
+/* =========================================
+   RESPONSIVE FOOTER
+========================================= */
+
+@media (max-width: 1100px) {
+  .footer-main {
+    grid-template-columns: 1fr 2fr;
+    gap: 38px;
+  }
+
+  .footer-app-column {
+    grid-column: 1 / -1;
+  }
+
+  .footer-app-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footer-app-button {
+    min-width: 170px;
+  }
+
+  .author-slide {
+    flex-basis: calc((100% - 44px) / 3);
+  }
+}
+
+@media (max-width: 700px) {
+  .authors-section {
+    padding: 40px 5% 34px;
+  }
+
+  .authors-heading-row {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .authors-heading h2 {
+    font-size: 27px;
+  }
+
+  .authors-heading p {
+    max-width: 280px;
+    font-size: 12px;
+  }
+
+  .author-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .authors-controls {
+    gap: 6px;
+  }
+
+  .author-slide {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+
+  .author-cover {
+    height: 190px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 40px 6%;
+  }
+
+  .footer-brand {
+    max-width: 420px;
+  }
+
+  .footer-link-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+  }
+
+  .footer-app-column {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px 6%;
+  }
+
+  .footer-social {
+    gap: 12px;
+  }
+
+  .footer-copyright {
+    text-align: left;
+  }
+}
+
+@media (max-width: 380px) {
+  .authors-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .authors-controls {
+    align-self: flex-end;
+  }
+
+  .author-cover {
+    height: 165px;
+  }
+
+  .footer-link-groups {
+    gap: 24px 14px;
+  }
+}
